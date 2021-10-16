@@ -1,2 +1,13 @@
-[functions]
-  directory = "my_functions"
+[build]
+    command = "npm run build"
+    functions = "my_functions" # netlify dev uses this directory to scaffold and serve your functions
+    publish = "build"
+
+[dev]
+    framework = "#custom"
+    command = "npm run dev"
+    targetPort = 8080
+    port = 8888
+    public = "public"
+    jwtRolePath = "app_metadata.authorization.roles"
+    autoLaunch = true
