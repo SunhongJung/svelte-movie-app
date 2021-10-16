@@ -6,6 +6,8 @@ exports.handler = async function(event, context) {
     const { title, type, year, page, id } = params;
     // const OMDB_API_KEY = '6c934e4a';
 
+    // console.log(process.env);
+
     const url = id 
         ? `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${id}&plot=full` 
         : `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${title}&type=${type}&y=${year}&page=${page}`
